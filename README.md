@@ -1,51 +1,60 @@
-# electric-drizzle
+# SyncTime
 
-An Electron app to showcase the use of the [`drizzle`](https://orm.drizzle.team) library using the [electron-shadcn](https://github.com/LuanRoger/electron-shadcn) template as base.
+A time tracking application that helps you monitor your application usage patterns and time spent on different apps.
 
-![Screenshot](https://github.com/LuanRoger/electric-drizzle/blob/main/images/demo.png)
+## Features
 
-> [!WARNING]
-> This project is just for demo purposes, it will not be actively maintained.
+- Track active application windows and usage duration
+- Generate daily and weekly usage reports
+- Categorize applications for better insights
+- Export usage statistics
+- System tray integration for background monitoring
+- Dark/Light mode support
 
-## How to run
+## How it Works
 
-### Pre-requisites
+SyncTime runs in the background and monitors:
+- Active window titles
+- Application focus time
+- Application switching patterns
+- Total usage duration per application
 
-- Node.js
-- NPM
-- PostgreSQL instance running
+## Development
 
-It's recomended to use Docker to run the PostgreSQL instance. You can use the following command to start a PostgreSQL instance:
+### Prerequisites
 
+- Node.js 18 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-docker run --name electric-drizzle-db -p 5432:5432 -d -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin postgres
+git clone https://github.com/yourusername/synctime.git
+cd synctime
 ```
 
-### Steps
-
-1. Clone this repository
-
-2. Install dependencies
-
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Update the database URL:
-
-In the [`db_consts.ts`](https://github.com/LuanRoger/electric-drizzle/blob/main/src/lib/db/db_consts.ts) file, update the `dbUrl` constant with the URL of your PostgreSQL instance.
-
-4. Push the schemas to the database
-
+3. Start the development server:
 ```bash
-npm run db:push
+npm run dev
 ```
-5. Run the app
 
+### Building
+
+To create a production build:
 ```bash
-npm run start
+npm run build
 ```
+
+## Privacy Notice
+
+SyncTime only tracks application names and window titles locally on your machine. No data is sent to external servers, and you have full control over your usage data.
 
 ## License
 
-This project is under the MIT license. Check the [LICENSE](https://github.com/LuanRoger/electric-drizzle/blob/main/LICENSE) for more information.
+MIT License
