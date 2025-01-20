@@ -5,18 +5,6 @@ import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const tempMockClients: Client[] = [
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-    { id: "asdasd", name: "Test", email: "test@test.com" },
-];
-
 interface ClientTableProps {
     clients: Client[];
     onClientDeleteRequest: (clientId: string) => void;
